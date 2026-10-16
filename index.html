@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Portal</title>
+</head>
+<body>
+    <h2>College Portal</h2>
+
+    <button onclick="showLogin()">Login</button>
+    <button onclick="showSignup()">Sign Up</button>
+
+    <form id="loginForm">
+        <h3>Login</h3>
+        <input id="username" placeholder="Username" required><br><br>
+        <input id="password" type="password" placeholder="Password" required><br><br>
+
+        <select id="role">
+            <option value="student">Student</option>
+            <option value="admin">Admin</option>
+        </select><br><br>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <form id="signupForm" style="display:none">
+        <h3>Sign Up</h3>
+        <input id="newUsername" placeholder="Username" required><br><br>
+        <input id="newPassword" type="password" placeholder="Password" required><br><br>
+
+        <select id="newRole">
+            <option value="student">Student</option>
+            <option value="admin">Admin</option>
+        </select><br><br>
+
+        <button type="submit">Create Account</button>
+    </form>
+
+    <p id="message"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

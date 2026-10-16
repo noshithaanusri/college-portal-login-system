@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <h3 id="welcome"></h3>
+
+    <p>Manage Students</p>
+    <p>Manage Attendance</p>
+    <p>View Reports</p>
+
+    <button onclick="logout()">Logout</button>
+
+    <script>
+        let user = JSON.parse(
+            localStorage.getItem("loggedInUser")
+        );
+
+        if (!user || user.role !== "admin") {
+            location.href = "index.html";
+        } else {
+            document.getElementById("welcome").innerText =
+                "Welcome, " + user.username;
+        }
+
+        function logout() {
+            localStorage.removeItem("loggedInUser");
+            location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

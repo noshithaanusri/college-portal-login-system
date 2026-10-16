@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+</head>
+<body>
+    <h1>Student Dashboard</h1>
+    <h3 id="welcome"></h3>
+
+    <p>View Profile</p>
+    <p>View Marks</p>
+    <p>View Attendance</p>
+    <p>View Timetable</p>
+
+    <button onclick="logout()">Logout</button>
+
+    <script>
+        let user = JSON.parse(
+            localStorage.getItem("loggedInUser")
+        );
+
+        if (!user || user.role !== "student") {
+            location.href = "index.html";
+        } else {
+            document.getElementById("welcome").innerText =
+                "Welcome, " + user.username;
+        }
+
+        function logout() {
+            localStorage.removeItem("loggedInUser");
+            location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
